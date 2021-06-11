@@ -8,8 +8,9 @@ body {
   font-family: "Roboto";
   overflow: hidden;
   margin: 0;
-  background: #f1f1f1;
   height: 100vh;
+  background: url("https://images.hdqwalls.com/download/asphalt-road-landscape-5k-v1-2560x1024.jpg")
+    0 0/100% 100% no-repeat;
 }
 
 h1 {
@@ -22,6 +23,8 @@ h1 {
   align-items: center;
   width: 100%;
   padding: 0 20px;
+  animation-name: all;
+  animation-duration: 5s;
 }
 
 .slide {
@@ -35,7 +38,7 @@ h1 {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  transition: 0.5s ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .slide.active {
@@ -58,14 +61,43 @@ h1 {
 }
 
 .slide p {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 50vh;
-  color: black;
+  color: #f1f1f1;
   width: 90vw;
   display: none;
+  opacity: 0;
 }
 
 .slide.active p {
+  animation-name: text;
+  animation-duration: 0.6s;
   display: inline;
-  transition: opacity 0.3s ease-in 0.4s;
+  opacity: 1;
+}
+
+@keyframes text {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes all {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
