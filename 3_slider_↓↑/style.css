@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 100vh;
 }
 
@@ -40,7 +40,7 @@ body {
 .sidebar h1 {
   font-size: 40px;
   margin-bottom: 10px;
-  margin-top: -30px;
+  margin-top: 18px;
 }
 
 .main-slide {
@@ -56,7 +56,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100%;
+  height: 99.9%;
   width: 100%;
 }
 
@@ -80,18 +80,47 @@ button:focus {
 .container .controls button {
   position: absolute;
   left: 35%;
-  top: 50%;
   z-index: 100;
 }
 
-.container .controls .down-button {
+.container .controls .Home {
   transform: translateX(-100%);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  top: 20%;
 }
 
-.container .controls .up-button {
+.container .controls .one {
   transform: translateY(-100%);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  top: 37%;
+}
+
+.container .controls .two {
+  transform: translateX(-100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  top: 37%;
+}
+
+.container .controls .three {
+  transform: translateY(-100%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  top: 53.8%;
+}
+
+.container .controls .four {
+  transform: translateX(-100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  top: 53.8%;
+}
+
+.container .controls .complete {
+  transform: translateY(-100%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  top: 70.5%;
 }
