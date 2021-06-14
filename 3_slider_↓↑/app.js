@@ -20,18 +20,44 @@ threeBtn.addEventListener("click", () => slideChange("3"));
 fourBtn.addEventListener("click", () => slideChange("4"));
 completeBtn.addEventListener("click", () => slideChange("complete"));
 
+document.addEventListener("keydown", (event) => {
+  if (event.key === "0") {
+    slideChange("home");
+  } else if (event.key === "1") {
+    slideChange("1");
+  } else if (event.key === "2") {
+    slideChange("2");
+  } else if (event.key === "3") {
+    slideChange("3");
+  } else if (event.key === "4") {
+    slideChange("4");
+  } else if (event.key === "5") {
+    slideChange("complete");
+  }
+});
+
+function resettingStyles(yourBackgroundColor) {
+  homeBtn.style.backgroundColor = yourBackgroundColor;
+  oneBtn.style.backgroundColor = yourBackgroundColor;
+  twoBtn.style.backgroundColor = yourBackgroundColor;
+  threeBtn.style.backgroundColor = yourBackgroundColor;
+  fourBtn.style.backgroundColor = yourBackgroundColor;
+  completeBtn.style.backgroundColor = yourBackgroundColor;
+}
+
 function slideChange(direction) {
+  resettingStyles("#fff");
   direction === "home"
-    ? (activeSlideIndex = 0)
+    ? ((activeSlideIndex = 0), (homeBtn.style.backgroundColor = "black"))
     : direction === "1"
-    ? (activeSlideIndex = 1)
+    ? ((activeSlideIndex = 1), (oneBtn.style.backgroundColor = "black"))
     : direction === "2"
-    ? (activeSlideIndex = 2)
+    ? ((activeSlideIndex = 2), (twoBtn.style.backgroundColor = "black"))
     : direction === "3"
-    ? (activeSlideIndex = 3)
+    ? ((activeSlideIndex = 3), (threeBtn.style.backgroundColor = "black"))
     : direction === "4"
-    ? (activeSlideIndex = 4)
-    : (activeSlideIndex = 5);
+    ? ((activeSlideIndex = 4), (fourBtn.style.backgroundColor = "black"))
+    : ((activeSlideIndex = 5), (completeBtn.style.backgroundColor = "black"));
 
   const height = container.clientHeight;
 
