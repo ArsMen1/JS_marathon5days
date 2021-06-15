@@ -6,6 +6,9 @@ const board = document.querySelector("#board");
 let time = 20;
 let score = 0;
 
+const figure = ["square", "circle", "diamond"];
+const youFigure = figure[getRandomNumber(0, figure.length - 1)];
+
 startBtn.addEventListener("click", (event) => {
   event.preventDefault();
   screen[0].classList.add("up");
@@ -20,7 +23,7 @@ timeList.addEventListener("click", (event) => {
 });
 
 board.addEventListener("click", (event) => {
-  if (event.target.classList.contains("circle")) {
+  if (event.target.classList.contains(youFigure)) {
     score++;
     event.target.remove();
     createRandomCircle();
@@ -62,7 +65,7 @@ function createRandomCircle() {
   const x = getRandomNumber(0, width - size);
   const y = getRandomNumber(0, height - size);
 
-  circle.classList.add("circle");
+  circle.classList.add(youFigure);
   circle.style.width = `${size}px`;
   circle.style.height = `${size}px`;
   circle.style.top = `${y}px`;
