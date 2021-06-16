@@ -96,16 +96,13 @@ h1 {
 .circle {
   position: absolute;
   border-radius: 50%;
-  cursor: pointer;
 }
 
 .square {
   position: absolute;
-  cursor: pointer;
 }
 
 .diamond {
   position: absolute;
-  cursor: pointer;
   transform: rotate(-45deg);
 }

@@ -227,6 +227,7 @@ let youFigure;
 let stopTime;
 let time = 20;
 let score = 0;
+let miss = 0;
 
 // по нажатию на "начать игру" переводит на следующий экран
 startBtn.addEventListener("click", (event) => {
@@ -249,6 +250,8 @@ board.addEventListener("click", (event) => {
     score++;
     event.target.remove();
     createRandomCircle();
+  } else {
+    miss++;
   }
 });
 
@@ -256,6 +259,7 @@ function startGame() {
   stopTime = setInterval(decreaseTime, 1000);
   createRandomCircle();
   setTime(time);
+  screen[2].style = " cursor: url(aim.png) 16 16, auto;";
 }
 
 function decreaseTime() {
@@ -277,9 +281,13 @@ function setTime(val) {
 function finishGame() {
   clearTimeout(stopTime);
   timeEl.parentNode.classList.add("hide");
-  board.innerHTML = `<h1>Time over! <br>
-  Your score = <span class='primary'>${score}</span></h1>
-  <a href="">Повторить</a>`;
+  board.innerHTML = `<div><h1><u>Time over!</u> </h1>
+  <h2>Your score = <span class='primary'>${score}</span><br>
+  Miss: ${miss}<br>
+  Correct: ${Math.round((score / (miss + score)) * 100)}%<br><br>
+  <a style='text-decoration: underline #16d9e3 dashed;' href="">Repeat</a>
+  </h2>
+  </div>`;
 }
 
 function createRandomCircle() {
