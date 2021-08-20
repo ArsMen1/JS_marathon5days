@@ -4,23 +4,50 @@
 
 body {
   background-color: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
-  overflow: hidden;
   margin: 0;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 500px;
-  flex-wrap: wrap;
+.container1 {
+  position: fixed;
+  padding: 5% 15% 5% 15%;
+  width: 45%;
+  height: 45%;
+  top: 0;
+  left: 0;
+  margin: 15px;
+}
+.container2 {
+  position: fixed;
+  padding: 5% 15% 5% 15%;
+  width: 45%;
+  height: 45%;
+  top: 0;
+  left: 50%;
+  margin: 15px;
+}
+.container3 {
+  position: fixed;
+  padding: 5% 15% 5% 15%;
+  width: 45%;
+  height: 45%;
+  top: 50%;
+  left: 0;
+  margin: 15px;
+}
+.container4 {
+  position: fixed;
+  padding: 5% 15% 5% 15%;
+  width: 45%;
+  height: 45%;
+  top: 50%;
+  left: 50%;
+  margin: 15px;
 }
 
 .square {
+  display: inline-block;
+  position: relative;
   width: 16px;
   height: 16px;
   background-color: #1d1d1d;

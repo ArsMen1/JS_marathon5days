@@ -214,39 +214,46 @@ const colors = [
   "#FFFF99",
   "#FFFFCC",
   "#FFFFFF",
-]
-const board = document.querySelector("#board")
-const SQUARES_NUMBER = 600
-let soundSelection="bass";
-let s = `sounds/${soundSelection}`;
-const sounds = [s+'/do.mp3',s+'/re.mp3',s+'/mi.mp3',s+'/sol.mp3',s+'/lya.mp3',s+'/si.mp3',] 
+];
 
+const board1 = document.querySelector("#board1");
+const board2 = document.querySelector("#board2");
+const board3 = document.querySelector("#board3");
+const board4 = document.querySelector("#board4");
 
-for (let i = 0; i < SQUARES_NUMBER; i++) {
-  const square = document.createElement("div");
-  square.classList.add("square");
+const SQUARES_NUMBER = 50; //Количество кубиков в квадрате
 
-  square.addEventListener("mouseover", () => {
-    setColor(square);
-    soundRundom();
-  });
+function createSquare(board) {
+  for (let i = 0; i < SQUARES_NUMBER; i++) {
+    const square = document.createElement("div");
+    square.classList.add("square");
 
-  square.addEventListener("mouseleave", () => {
-    removeColor(square);
-  });
+    square.addEventListener("mouseover", () => {
+      setColor(square, board);
+      soundRundom();
+    });
 
-  board.append(square);
+    square.addEventListener("mouseleave", () => {
+      removeColor(square, board);
+    });
+
+    board.append(square);
+  }
 }
+createSquare(board1)
+createSquare(board2)
+createSquare(board3)
+createSquare(board4)
 
-function setColor(el) {
+function setColor(el, board) {
   const color = getRandomColor();
   el.style.backgroundColor = color;
   el.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`;
-  board.style.boxShadow = `0 0 2px ${color},0 0 100px ${color}`
-  board.style.transition = '0.6s ease'
+  board.style.boxShadow = `0 0 2px ${color},0 0 100px ${color}`;
+  board.style.transition = "0.6s ease";
 }
 
-function removeColor(el) {
+function removeColor(el, board) {
   el.style.boxShadow = `0 0 2px #000`;
   el.style.backgroundColor = "#1d1d1d";
   board.style.boxShadow = `0 0 2px #000`;
@@ -258,10 +265,19 @@ function getRandomColor() {
 }
 
 function soundRundom() {
-  const index = Math.floor(Math.random() * sounds.length)
+  let soundSelection = "bass";
+  let s = `sounds/${soundSelection}`;
+  const sounds = [
+    s + "/do.mp3",
+    s + "/re.mp3",
+    s + "/mi.mp3",
+    s + "/sol.mp3",
+    s + "/lya.mp3",
+    s + "/si.mp3",
+  ];
+
+  const index = Math.floor(Math.random() * sounds.length);
   var audio = new Audio(); // Создаём новый элемент Audio
   audio.src = sounds[index]; // Указываем путь к звуку "клика"
   audio.autoplay = true; // Автоматически запускаем
 }
-
-function soundSelectionFn() {}
