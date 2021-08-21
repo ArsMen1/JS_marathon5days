@@ -305,8 +305,9 @@ function createRandomCircle() {
   circle.style.top = `${y}px`;
   circle.style.left = `${x}px`;
 
-  circle.style.backgroundColor =
-    colors[Math.floor(Math.random() * colors.length)];
+  circle.style.background = `linear-gradient(90deg, ${
+    colors[Math.floor(Math.random() * colors.length)]
+  } 0%, ${colors[Math.floor(Math.random() * colors.length)]} 100%)`;
 
   board.append(circle);
 }
