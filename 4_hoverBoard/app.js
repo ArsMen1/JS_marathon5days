@@ -222,15 +222,16 @@ const board3 = document.querySelector("#board3");
 const board4 = document.querySelector("#board4");
 
 const SQUARES_NUMBER = 50; //Количество кубиков в квадрате
+let soundAssignment = "";
 
-function createSquare(board) {
+function createSquare(board, soundAssignment) {
   for (let i = 0; i < SQUARES_NUMBER; i++) {
     const square = document.createElement("div");
     square.classList.add("square");
 
     square.addEventListener("mouseover", () => {
       setColor(square, board);
-      soundRundom();
+      soundRundom(soundAssignment);
     });
 
     square.addEventListener("mouseleave", () => {
@@ -240,10 +241,10 @@ function createSquare(board) {
     board.append(square);
   }
 }
-createSquare(board1)
-createSquare(board2)
-createSquare(board3)
-createSquare(board4)
+createSquare(board1, "piano");
+createSquare(board2, "bass");
+createSquare(board3, "akkordion");
+createSquare(board4, "bassGitara");
 
 function setColor(el, board) {
   const color = getRandomColor();
@@ -264,13 +265,13 @@ function getRandomColor() {
   return colors[index];
 }
 
-function soundRundom() {
-  let soundSelection = "bass";
-  let s = `sounds/${soundSelection}`;
+function soundRundom(soundAssignment) {
+  let s = `sounds/${soundAssignment}`;
   const sounds = [
     s + "/do.mp3",
     s + "/re.mp3",
     s + "/mi.mp3",
+    s + "/fa.mp3",
     s + "/sol.mp3",
     s + "/lya.mp3",
     s + "/si.mp3",
