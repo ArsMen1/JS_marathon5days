@@ -221,7 +221,9 @@ const board2 = document.querySelector("#board2");
 const board3 = document.querySelector("#board3");
 const board4 = document.querySelector("#board4");
 
-const SQUARES_NUMBER = 50; //Количество кубиков в квадрате
+const onlyWidth =
+  parseFloat(getComputedStyle(board1).getPropertyValue("width")) / 3;
+const SQUARES_NUMBER = onlyWidth / parseFloat(onlyWidth > 200 ? 3.45 : 3.6); //Количество квадратов в контенере
 let soundAssignment = "";
 
 function createSquare(board, soundAssignment) {
@@ -241,6 +243,7 @@ function createSquare(board, soundAssignment) {
     board.append(square);
   }
 }
+
 createSquare(board1, "piano");
 createSquare(board2, "bass");
 createSquare(board3, "akkordion");
@@ -261,8 +264,7 @@ function removeColor(el, board) {
 }
 
 function getRandomColor() {
-  const index = Math.floor(Math.random() * colors.length);
-  return colors[index];
+  return colors[Math.floor(Math.random() * colors.length)];
 }
 
 function soundRundom(soundAssignment) {
@@ -277,8 +279,7 @@ function soundRundom(soundAssignment) {
     s + "/si.mp3",
   ];
 
-  const index = Math.floor(Math.random() * sounds.length);
   var audio = new Audio(); // Создаём новый элемент Audio
-  audio.src = sounds[index]; // Указываем путь к звуку "клика"
+  audio.src = sounds[Math.floor(Math.random() * sounds.length)]; // Указываем путь к звуку "клика"
   audio.autoplay = true; // Автоматически запускаем
 }

@@ -8,62 +8,38 @@ body {
   margin: 0;
 }
 
-.container1 {
-  position: fixed;
-  padding: 5% 15% 5% 15%;
-  width: 45%;
-  height: 45%;
-  top: 0;
-  left: 0;
-  margin: 15px;
-}
-
-#board1 > h1 {
-  color: #f1f1f1;
-  margin: -30% 0 20% 0;
-  padding-left: 10%;
-}
-.container2 {
-  position: fixed;
-  padding: 5% 15% 5% 15%;
-  width: 45%;
-  height: 45%;
-  top: 0;
-  left: 50%;
-  margin: 15px;
-}
-
-#board2 > h1 {
-  color: #f1f1f1;
-  margin: -30% 0 20% 0;
-  padding-left: 10%;
-}
-.container3 {
-  position: fixed;
-  padding: 5% 15% 5% 15%;
-  width: 45%;
-  height: 45%;
-  top: 50%;
-  left: 0;
-  margin: 15px;
-}
-
-#board3 > h1 {
-  color: #f1f1f1;
-  margin: -30% 0 20% 0;
-  padding-left: 10%;
-}
+.container1,
+.container2,
+.container3,
 .container4 {
   position: fixed;
   padding: 5% 15% 5% 15%;
   width: 45%;
   height: 45%;
-  top: 50%;
-  left: 50%;
   margin: 15px;
 }
 
-#board4 > h1 {
+.container1 {
+  top: 0;
+  left: 0;
+}
+
+.container2 {
+  top: 0;
+  left: 50%;
+}
+
+.container3 {
+  top: 50%;
+  left: 0;
+}
+
+.container4 {
+  top: 50%;
+  left: 50%;
+}
+
+div > h1 {
   color: #f1f1f1;
   margin: -30% 0 20% 0;
   padding-left: 10%;
