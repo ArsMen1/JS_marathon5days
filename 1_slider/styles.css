@@ -47,12 +47,9 @@ h1 {
 }
 
 .slide h3 {
-  position: absolute;
+  margin: 0 auto;
   font-size: 24px;
   top: 20px;
-  left: 20px;
-  margin: 0;
-  opacity: 0;
 }
 
 .slide.active h3 {
